@@ -6,6 +6,14 @@ while(isNaN(modoDeJogo) || modoDeJogo%2!=0 || modoDeJogo<3|| modoDeJogo>14 ){
 }
 let arranjo = [".bros",".explody",".fiesta",".metal", ".revertit",".triplets",".unicorn"]
 arranjo=arranjo.slice(7-modoDeJogo/2)
+console.log(arranjo)
+while(contador<arranjo.lenght){
+    const localizador1st= document.querySelector(arranjo[contador])
+    localizador1st.classList.remove("escondido")
+    contador=contador+1
+    console.log(arranjo)
+}
+
 function seleciona(elemento){
     elemento.classList.add("virar");
     if(Number(document.querySelectorAll(".virar").length)%2 !==0){
@@ -31,13 +39,7 @@ function verifica(){
     
 }
 
-// while(contador<arranjo.lenght){
-//     const localizador1st= document.querySelector(arranjo[contador])
-//     const localizador2nd= document.querySelector(arranjo[contador])
-//     localizador1st =localizador1st.classList.remove("escondido")
-//     contador=contador+1
-// }
-// console.log(document.querySelector(`.bros:last-of-type`))
+
 
 
 
