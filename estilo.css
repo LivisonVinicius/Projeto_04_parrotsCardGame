@@ -72,10 +72,11 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    color: yellowgreen;
-    width: 100px;
-    height: 63px;    
+    background-color:rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.5);
+    width: 70px;
+    height: 63px;
+    font-size: large;  
 }
 @media screen and (max-width:425px) {
     main{
