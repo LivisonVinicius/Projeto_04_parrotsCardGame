@@ -75,8 +75,30 @@ img{
     background-color:rgba(0, 0, 0, 0.3);
     color: rgba(0, 0, 0, 0.5);
     width: 70px;
-    height: 63px;
-    font-size: large;  
+    height: 50px;
+    font-size: large;
+    border-radius: 10px;  
+}
+.tema{
+    display: flex;
+    align-items:stretch;
+    justify-content: space-between;
+    width: 500px;
+    height: 500px;
+    flex-direction: column;
+    margin-top: auto;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+}
+.tema div{
+    display: flex;
+    justify-content: space-between;
+}
+.tema img{
+    width: 150px;
+    height: 150px;
 }
 @media screen and (max-width:425px) {
     main{
@@ -86,6 +108,9 @@ img{
         margin-top: 60px;
     }
     .segundos{
-        top: 100px;
+        top: 112px;
     }
+}
+.escondido{
+    display: none;
 }

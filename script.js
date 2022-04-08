@@ -1,11 +1,37 @@
 let contador = 0
 let counter = 0
 let main=document.querySelector("main")
-let contadorReset=0
 let numJogadas=0
 let segundos=document.querySelector(".segundos")
 let arranjoGif;
-inicioDoJogo()
+let arranjoClasse;
+
+function escolhaTema(posicao){
+    if(posicao=="parrot"){
+        arranjoClasse= [".bobrossparrot",".explodyparrot",".fiestaparrot",".metalparrot", ".revertitparrot",".tripletsparrot",".unicornparrot"]
+        inicioDoJogo()
+        document.querySelector("header h1").innerHTML="Parrot Game"
+    }
+    if(posicao=="naruto"){
+        arranjoClasse= [".chidorinaruto",".itachinaruto",".madaranaruto",".minatonaruto",".sadnaruto",".shynaruto",".tobinaruto"]
+        inicioDoJogo()
+        document.querySelector("header h1").innerHTML="Naruto Game"
+    }
+    if(posicao=="haikyuu"){
+        arranjoClasse= [".figthhaikyuu",".drophaikyuu",".recievehaikyuu",".confhaikyuu",".teamhaikyuu",".tsukishimahaikyuu",".liberohaikyuu"]
+        inicioDoJogo()
+        document.querySelector("header h1").innerHTML="Haikyuu Game"
+    }
+    if(posicao=="steven"){
+        arranjoClasse= [".butterfliessteven",".blushsteven",".crysteven",".stevensteven",".carsteven",".rubysteven",".cyclopesteven"]
+        inicioDoJogo()
+        document.querySelector("header h1").innerHTML="Steven Universe Game"
+    }
+    document.querySelector("header").classList.remove("escondido")
+    document.querySelector(".tema").classList.add("escondido")
+    document.querySelector("main").classList.remove("escondido")
+}
+
 function inicioDoJogo(){
     segundos.innerHTML=0
     main.innerHTML=""
@@ -16,7 +42,6 @@ function inicioDoJogo(){
     contador=0
     counter=0
     numJogadas=0
-    arranjoClasse = [".bobrossparrot",".explodyparrot",".fiestaparrot",".metalparrot", ".revertitparrot",".tripletsparrot",".unicornparrot"]
     arranjoClasse.sort(parametro)
     arranjoGif=[`imagens/${arranjoClasse[0].replace(".","")}.gif`,`imagens/${arranjoClasse[0].replace(".","")}.gif`,`imagens/${arranjoClasse[1].replace(".","")}.gif`,`imagens/${arranjoClasse[1].replace(".","")}.gif`,`imagens/${arranjoClasse[2].replace(".","")}.gif`,`imagens/${arranjoClasse[2].replace(".","")}.gif`,`imagens/${arranjoClasse[3].replace(".","")}.gif`,`imagens/${arranjoClasse[3].replace(".","")}.gif`, `imagens/${arranjoClasse[4].replace(".","")}.gif`,`imagens/${arranjoClasse[4].replace(".","")}.gif`,`imagens/${arranjoClasse[5].replace(".","")}.gif`,`imagens/${arranjoClasse[5].replace(".","")}.gif`,`imagens/${arranjoClasse[6].replace(".","")}.gif`,`imagens/${arranjoClasse[6].replace(".","")}.gif`]
     arranjoClasse=arranjoClasse.slice(7-modoDeJogo/2)
@@ -40,7 +65,7 @@ function parametro(){
     return Math.random()-0.5;
 }
 
-function seleciona(elemento,e){
+function seleciona(elemento){
     if (document.querySelectorAll(".virar").length<2) {
         elemento.classList.add("virar");
     }else{
@@ -72,7 +97,9 @@ function verifica(){
         let jogarDenovo=prompt("Quer jogar novamente? sim/não","sim").toLowerCase()
         if (jogarDenovo=="sim"){
             segundos.innerHTML=0
-            inicioDoJogo()      
+            document.querySelector("main").classList.add("escondido")
+            document.querySelector("header").classList.add("escondido")
+            document.querySelector(".tema").classList.remove("escondido") 
         }
         if (jogarDenovo!="sim") {
             alert("Que pena :(")
@@ -87,3 +114,9 @@ function timer(){
     },1000)
     clearInterval(timer)
 }
+
+
+
+
+
+
