@@ -19,6 +19,7 @@ header{
     line-height: 66px;
     letter-spacing: -0.004em;
     color: #75B79E;
+    text-align: center;
 }
 main{
     max-width: 906px;
@@ -53,10 +54,10 @@ main{
 .back-face {
     transform: rotateY(180deg);
 }
-.card.virar .back-face {
+.virar .back-face,.virada .back-face {
     transform: rotateY(0deg);
 }
-.card.virar .front-face {
+.virar .front-face,.virada .front-face {
     transform: rotateY(-180deg);
 }
 
@@ -64,6 +65,26 @@ img{
     width: 100px;
     height: 100px;
 }
-.escondido{
-    display: none;
+.segundos{
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: yellowgreen;
+    width: 100px;
+    height: 63px;    
+}
+@media screen and (max-width:425px) {
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+    }
+    .segundos{
+        top: 100px;
+    }
 }
