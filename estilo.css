@@ -2,10 +2,15 @@
     box-sizing: border-box;
 }
 body {
-    background: #EEF9BF;
+    background: url("imagens/photo-1553095066-5014bc7b7f2d.jfif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 header{
     width: 100%;
@@ -30,7 +35,6 @@ main{
     margin-top: 13px;
 }
 .card{
-    
     border-radius: 5px;
     position: relative;
     width: 117px;
@@ -107,10 +111,69 @@ img{
         flex-direction: column;
         margin-top: 60px;
     }
+    .tema{
+        position:absolute;
+        width: auto;
+        top: 550px;
+        height: auto;
+    }
+    .tema div{
+        flex-direction: column;
+    }
+    .tema img{
+        margin-top: 17px;
+        margin-bottom: 17px;
+    }
     .segundos{
         top: 112px;
     }
 }
 .escondido{
     display: none;
+}
+.parrot{
+    background-color:rgba(44, 39, 39, 0.3) ;
+}
+body.naruto{
+    background:url("imagens/uzumakibackground.webp") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body.parrot{
+    background: #EEF9BF;
+    background-image: none;
+}
+body.haikyuu{
+    background:url("imagens/haikyuuback.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body.steven{
+    background:url("imagens/stevenbackground.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body.naruto .face{
+    background-color: orange;
+}
+body.naruto h1{
+    color: orange;
+}
+body.haikyuu .face{
+    background-color: yellow;
+}
+body.haikyuu h1{
+    color: black;
+}
+body.steven .face{
+    background-color:lightblue ;
+}
+body.steven h1{
+    color: limegreen;
 }

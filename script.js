@@ -5,27 +5,33 @@ let numJogadas=0
 let segundos=document.querySelector(".segundos")
 let arranjoGif;
 let arranjoClasse;
+let front;
 
 function escolhaTema(posicao){
+    front=posicao
     if(posicao=="parrot"){
         arranjoClasse= [".bobrossparrot",".explodyparrot",".fiestaparrot",".metalparrot", ".revertitparrot",".tripletsparrot",".unicornparrot"]
         inicioDoJogo()
-        document.querySelector("header h1").innerHTML="Parrot Game"
+        document.querySelector("header h1").innerHTML="PARROT CARD GAME"
+        document.querySelector("body").classList.add("parrot")
     }
     if(posicao=="naruto"){
         arranjoClasse= [".chidorinaruto",".itachinaruto",".madaranaruto",".minatonaruto",".sadnaruto",".shynaruto",".tobinaruto"]
         inicioDoJogo()
-        document.querySelector("header h1").innerHTML="Naruto Game"
+        document.querySelector("header h1").innerHTML="NARUTO CARD GAME"
+        document.querySelector("body").classList.add("naruto")
     }
     if(posicao=="haikyuu"){
         arranjoClasse= [".figthhaikyuu",".drophaikyuu",".recievehaikyuu",".confhaikyuu",".teamhaikyuu",".tsukishimahaikyuu",".liberohaikyuu"]
         inicioDoJogo()
-        document.querySelector("header h1").innerHTML="Haikyuu Game"
+        document.querySelector("header h1").innerHTML="HAIKYUU CARD GAME"
+        document.querySelector("body").classList.add("haikyuu")
     }
     if(posicao=="steven"){
         arranjoClasse= [".butterfliessteven",".blushsteven",".crysteven",".stevensteven",".carsteven",".rubysteven",".cyclopesteven"]
         inicioDoJogo()
-        document.querySelector("header h1").innerHTML="Steven Universe Game"
+        document.querySelector("header h1").innerHTML="STEVEN CARD GAME"
+        document.querySelector("body").classList.add("steven")
     }
     document.querySelector("header").classList.remove("escondido")
     document.querySelector(".tema").classList.add("escondido")
@@ -51,7 +57,7 @@ function inicioDoJogo(){
         let recebeVariavel=
         `<div class= "card" onclick="seleciona(this)">
             <div class="front-face face">
-              <img src="imagens/front.png">
+              <img src="imagens/front${front}.png">
             </div>
             <div class="back-face face">
               <img src="${arranjoGif[i]}">
@@ -98,8 +104,9 @@ function verifica(){
         if (jogarDenovo=="sim"){
             segundos.innerHTML=0
             document.querySelector("main").classList.add("escondido")
-            document.querySelector("header").classList.add("escondido")
-            document.querySelector(".tema").classList.remove("escondido") 
+            document.querySelector("header h1").innerHTML="ESCOLHA UM TEMA"
+            document.querySelector(".tema").classList.remove("escondido")
+            document.querySelector("body").classList.remove("naruto","parrot","haikyuu","steven")
         }
         if (jogarDenovo!="sim") {
             alert("Que pena :(")
